@@ -15,4 +15,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
+
 - 🌱 I’m currently learning AI, ML, DL and making some interesting projects about them
+- ⛩️ I extremely love Anime and Anime Arts and my projects mainly focus them
