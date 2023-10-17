@@ -1,0 +1,23 @@
+name: Update Image Readme
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at 1 UTC everyday
+    - cron: "0 21 * * *"
+  push: {branches: ["master", "main"]}
+
+jobs:
+  update-readme:
+    name: Update Image README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: PD-Mera/update-readme-image@main
+        with:
+          IMG_ALT: Image ALT
+          GH_TOKEN: ${{ secrets.RANDOM_IMAGE_README }}
+          README_REPOSITORY: PD-Mera/PD-Mera # No need to mention this if workflow present in current non profile repo.
+          IMG_PATH: assets/random_waifu_img.txt
+          WIDTH: "100%"
+          HEIGHT: "100%"
+          COMMIT_MESSAGE: Update Waifu Image [skip actions]

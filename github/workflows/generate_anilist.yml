@@ -1,0 +1,26 @@
+name: anilist
+on:
+  # Schedule daily updates
+  schedule: [{cron: "0 21 * * *"}]
+  # (optional) Run workflow manually
+  workflow_dispatch:
+  # (optional) Run workflow when pushing on master/main
+  push: {branches: ["master", "main"]}
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Favorites anime, characters
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics/plugin/anilist.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_anilist: yes
+          plugin_anilist_user: PDMera
+          plugin_anilist_medias: anime, manga
+          plugin_anilist_sections: watching, reading, favorites, characters
+          plugin_anilist_limit: 1
+          plugin_anilist_limit_characters: 22
